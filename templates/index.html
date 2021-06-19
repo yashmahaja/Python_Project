@@ -10,11 +10,11 @@
             <div class="loginbox">
             <img src="{{ url_for('static', filename='images/img.png') }}" alt="img" class="imgclass">
             <h1>Login Here</h1>
-            <form action="python/main.py" name="login" method="get">
+            <form action="" name="login" method="post">
                 <p>Username</p>
-                <input type="text" class="w3-input w3-border w3-round"  name="emailuser" placeholder="Enter Username">
+                <input type="text" class="w3-input w3-border w3-round"  name="username" placeholder="Enter Username">
                 <p>Password</p>
-                <input type="password" class="w3-input w3-border w3-round"  name="passworduser" placeholder="Enter Password"><br>
+                <input type="password" class="w3-input w3-border w3-round"  name="password" placeholder="Enter Password"><br>
                 <input type="submit"  name="" value="login"><br>
                 <a href="https://google.com">Lost your password?</a><br>
                 <a href="signup.html">Don't have an account?</a>
