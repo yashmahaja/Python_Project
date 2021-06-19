@@ -61,12 +61,13 @@ color: #fff;
 
 .loginbox input[type="submit"]
 { 
+
 border:none;
 outline: none;
 height: 30px;
 background: #fb2525;
 color: #fff;
-font-size: 18px;
+font-size: 12px;
 border-radius: 20px;
 }
 .loginbox input[type="submit"]:hover
@@ -139,7 +140,7 @@ outline: none;
 height: 30px;
 background: #fb2525;
 color: #fff;
-font-size: 18px;
+font-size: 12px;
 border-radius: 20px;
 }
 .loginboxsignup input[type="submit"]:hover
