@@ -1,27 +1,23 @@
-# import mysql.connector
-# db= mysql.connector.connect(host='localhost',database='test',user='root',password='13221@INDia')
-# cursor=db.cursor()
-# sql= "SELECT * FROM table1"
-# cursor.execute(sql)
-# record = cursor.fetchone()
-# print(record)
-
 from logging import info
 from flask import Flask, render_template,request,redirect,session,url_for
 import MySQLdb 
 from flask_mysqldb import MySQL
+
+
+islogin=False
+
 
 app=Flask(__name__)
 app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="13221@INDia"
+app.config["MYSQL_PASSWORD"]="root"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 
 def index():
     if request.method == 'POST':
@@ -35,13 +31,37 @@ def index():
             
         info=cursor.fetchone()
         if info is not None:
-            # if info['name_user'] == username and info['password_user'] == password:
-                return "login successful" 
+            if info['name_user'] == username and info['password_user'] == password:
+                islogin=True
         else:
-            return "unsuccessful"
-
-
+            return render_template("index.html")
     return render_template("index.html")
+
+
+
+# islogin=index()
+
+
+@app.route('/myprofile.html',methods=['GET','POST'])
+
+def myprofile():
+     if request.method == 'GET':
+
+        # if islogin:
+        #     username=request.form['username']
+        #     email=request.form['email']
+        #     phone=request.form['phone']
+        #     address=request.form['address']
+        #     cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+        #     cursor.execute("SELECT * FROM info1 WHERE name_user=%s AND email_user=%s AND address_user=%s AND phone_user=%s",(username,email,address,phone))
+        #     info=cursor.fetchone()
+        #     print(info)
+        return render_template("myprofile.html") 
+        # return render_template("index.html")
+
+
+
+
 
 @app.route('/signup.html',methods=['GET','POST'])
 
