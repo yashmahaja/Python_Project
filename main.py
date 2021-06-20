@@ -12,7 +12,7 @@ app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="root"
+app.config["MYSQL_PASSWORD"]="13221@INDia"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
@@ -32,7 +32,7 @@ def index():
         info=cursor.fetchone()
         if info is not None:
             if info['name_user'] == username and info['password_user'] == password:
-                return "login succsesful"
+                return render_template("home.html")
         else:
             return "unsuccsesful"
     return render_template("index.html")
