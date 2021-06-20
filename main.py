@@ -3,19 +3,21 @@ from flask import Flask, render_template,request,redirect,session,url_for
 import MySQLdb 
 from flask_mysqldb import MySQL
 
+
+islogin=False
+
+
 app=Flask(__name__)
 app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="13221@INDia"
+app.config["MYSQL_PASSWORD"]="root"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
 
-#Login&signup
-
-@app.route('/', methods=['GET','POST'])
+@app.route('/',methods=['GET','POST'])
 
 def index():
     if request.method == 'POST':
@@ -29,13 +31,14 @@ def index():
             
         info=cursor.fetchone()
         if info is not None:
-                return render_template("myprofile.html")
+            if info['name_user'] == username and info['password_user'] == password:
+                return "login succsesful"
         else:
-            return "unsuccsesfull"
-
+            return "unsuccsesful"
     return render_template("index.html")
 
 
+# islogin=index()
 
 @app.route('/signup.html',methods=['GET','POST'])
 
