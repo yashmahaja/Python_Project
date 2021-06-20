@@ -1,11 +1,3 @@
-# import mysql.connector
-# db= mysql.connector.connect(host='localhost',database='test',user='root',password='13221@INDia')
-# cursor=db.cursor()
-# sql= "SELECT * FROM table1"
-# cursor.execute(sql)
-# record = cursor.fetchone()
-# print(record)
-
 from logging import info
 from flask import Flask, render_template,request,redirect,session,url_for
 import MySQLdb 
@@ -21,6 +13,8 @@ app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
 
+#Login&signup
+
 @app.route('/', methods=['GET','POST'])
 
 def index():
@@ -35,13 +29,13 @@ def index():
             
         info=cursor.fetchone()
         if info is not None:
-            # if info['name_user'] == username and info['password_user'] == password:
-                return "login successful" 
+                return render_template("myprofile.html")
         else:
-            return "unsuccessful"
-
+            return "unsuccsesfull"
 
     return render_template("index.html")
+
+
 
 @app.route('/signup.html',methods=['GET','POST'])
 
@@ -68,6 +62,16 @@ def register():
 
 
     return render_template("signup.html")
+
+
+#authontication
+
+
+@app.route('/myprofile.html',methods=['GET','POST'])
+
+def myprofile():
+    return render_template("myprofile.html")
+
 
 
 if __name__ == '__main__' :

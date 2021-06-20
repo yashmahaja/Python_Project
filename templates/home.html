@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+<title>Home</title>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div style=" margin:4%; opacity:100%">
+    <a href="hotelbook.html">Hotel Bookings</a>
+  </div>
+  <div style="margin:4%;">
+    <a href="wishlist.html">Wishlist</a>
+  </div>
+  <div style=" margin:4%;">
+    <a href="notification.html">Notifications</a>
+  </div>
+  <div style=" margin:4%;">
+    <a href="home.html">Home</a>
+  </div>
+</div>
+<div class="navbar">
+<span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "350px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 
