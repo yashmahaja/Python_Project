@@ -1,0 +1,113 @@
+body{
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(../images/12.jpg);
+    background-size:cover;
+    background-position:center;
+    font-family:sans-serif;
+  }
+  .profileimg{
+    width: 3%;
+    transition: transform .2s;
+  }
+  
+  .zoom{
+    transition: transform .5s;
+  }
+  .zoom a:hover{
+    transform: scale(1.1);
+  }
+  
+  
+  .navbar{
+  
+    height:70px;
+    background:rgb(0, 0, 0);
+    color:#fff;
+    opacity: 0.9;
+    box-sizing: border-box;
+    padding: 1%;
+  }
+  
+  .navbar img:hover{
+    transform: scale(1.1);
+  }
+  
+  .navbar span:hover{
+    transform: scale(1.1);
+  } 
+  .sidenav {
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 8%;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #d66464;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  
+  
+  .tm-exp1, .tm-exp2{
+    background: #353535;
+    
+  }
+  
+  .tm-exp1::after{
+    display: block;
+  }
+  
+  .tm-exp2::after{
+    display: block;
+  }
+  
+  
+  .tm-exp1 p{
+    float: center;
+    
+    max-width: 30%;
+    font-size: 3.5vw;
+    color: #fff;
+  }
+  
+  .tm-exp2 p{
+    float: center;
+  
+    max-width: 30%;
+    font-size: 3.5vw;
+    color: #fff;
+  }
+  
+  
+  
+  

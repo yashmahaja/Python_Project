@@ -55,9 +55,9 @@ def register():
             address=request.form['address']
             if password==password1:
                 cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-                cursor.execute("INSERT INTO data.info1 VALUES(%s,%s,%s,%s,%s)",(username,password1,email,phone,address))
+                cursor.execute("INSERT INTO data.info1(name_user,password_user,email_user,phone_user,address_user) VALUES(%s,%s,%s,%s,%s)",(username,password1,email,phone,address))
                 db.connection.commit()
-                return "signup succesful"
+                return redirect("http://127.0.0.1:5000")
             else:
                 return "password not match"
         else:
@@ -67,7 +67,7 @@ def register():
     return render_template("signup.html")
 
 
-#authontication
+#authentication
 
 
 @app.route('/myprofile.html',methods=['GET','POST'])
