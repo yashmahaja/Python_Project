@@ -2,83 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/third.css') }}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
-<style>
-  .carousel {
-      background: #2f4357;
-      margin-top: 20px;
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 
-  }
-
-  .carousel-item {
-      text-align: center;
-      min-height: 280px;
-      /* Prevent carousel from being distorted if for some reason image doesn't load */
-  }
-</style>
 </head>
+
+
 <body>
-<title>Home</title>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div style=" margin:4%; opacity:100%">
-    <a href="hotelbook.html">Hotel Bookings</a>
+
+  <title>Home</title>
+
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style=" margin:4%; opacity:100%">
+      <a href="hotelbook.html">Hotel Bookings</a>
+    </div>
+    <div style="margin:4%;">
+      <a href="wishlist.html">Wishlist</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="notification.html">Notifications</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="home.html">Home</a>
+    </div>
   </div>
-  <div style="margin:4%;">
-    <a href="wishlist.html">Wishlist</a>
+
+  <!-- button of drawer -->
+  <!-- navbar -->
+  <div class="navbar">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+    <h6 name="username">Wellcome, admin</h6>
+    <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
   </div>
-  <div style=" margin:4%;">
-    <a href="notification.html">Notifications</a>
-  </div>
-  <div style=" margin:4%;">
-    <a href="home.html">Home</a>
-  </div>
-</div>
-<div class="navbar">
-<span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-</div>
+
+  <script>
+    function myprofile(clr) {
+      location.href = clr;
+    }
+  </script>
+<!-- drower+navbar -->
+
 
 <!-- sliders -->
-  <div class="container-lg my-4" >
-      <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-          <!-- Carousel indicators -->
-          <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-          <!-- Wrapper for carousel items -->
-          <div class="carousel-inner">
+
+  <div class="container-lg my-4" style="max-width:1200px; max-height:250px !important;">
+      <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel" style="max-width:1200px; max-height:250px !important;">
+      
+          <div class="carousel-inner"  style="max-width:1200px; max-height:250px !important;">
               <div class="carousel-item active">
-                  <img src="{{ url_for('static', filename='images/slide1.png') }}" alt="First Slide">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5>First slide label</h5>
-                      <p>Slide 1</p>
-                  </div>
+                  <img src="{{ url_for('static', filename='images/slide1.jpg') }}" alt="First Slide" style="max-width:1200px; max-height:250px !important;" >
               </div>
               <div class="carousel-item">
-                  <img src="{{ url_for('static', filename='images/slide2.png') }}" alt="Second Slide">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5>Second slide label</h5>
-                      <p>Slide 2</p>
-                  </div>
+                  <img src="{{ url_for('static', filename='images/slide2.jpg') }}" alt="Second Slide" style="max-width:1200px; max-height:250px !important;">
+
               </div>
               <div class="carousel-item">
-                  <img src="{{ url_for('static', filename='images/slide3.png') }}" alt="Third Slide">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h5>Slide 3</h5>
-                      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                  </div>
+                  <img src="{{ url_for('static', filename='images/slide3.jpg') }}" alt="Third Slide" style="max-width:1200px; max-height:250px !important;">
               </div>
           </div>
-          <!-- Carousel controls -->
+  
           <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
           </a>
@@ -88,61 +82,52 @@
       </div>
   </div>
   
-  
-  <!-- Multiple image -->
+  <!-- Multiple image slider-->
   <div class="container my-4">
       <hr class="my-4">
-  
-      <!--Carousel Wrapper-->
       <div id="multi-item-example" class="slide" data-ride="carousel">
-  
-        <!--Controls-->
         <div class="controls-top">
           <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
           <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
         </div>
-        <!--/.Controls-->
-  
-  
         <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-  
+        <div class="carousel-inner zoom" role="listbox">
           <!--First slide-->
           <div class="carousel-item active">
   
             <div class="row">
-              <div class="col-md-4">
-                <div class="card mb-2">
+              <div class="col-md zo-4" >
+                <div class="card mb-2om" style="padding: 2%" >
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+                <div class="card mb-2 " style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn1" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+                <div class="card mb-2 " style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn2" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
@@ -156,37 +141,37 @@
   
             <div class="row">
               <div class="col-md-4">
-                <div class="card mb-2">
+                <div class="card mb-2" style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn3" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+                <div class="card mb-2" style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn4" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+                <div class="card mb-2" style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn5" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
@@ -199,38 +184,38 @@
           <div class="carousel-item">
   
             <div class="row">
-              <div class="col-md-4">
-                <div class="card mb-2">
+              <div class="col-md-4" >
+                <div class="card mb-2 " style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn6" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+                <div class="card mb-2" style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn7" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
   
-              <div class="col-md-4 clearfix d-none d-md-block">
-                <div class="card mb-2">
+              <div class="col-md-4 clearfix d-none d-md-block ">
+                <div class="card mb-2" style="padding: 2%">
                   <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
                     alt="Card image cap">
                   <div class="card-body">
                     <h4 class="card-title">Card title</h4>
                       <p>HELLO!! </p>
-                    <a class="btn btn-primary">Button</a>
+                    <a id="myBtn8" class="btn btn-primary">BOOK NOW</a>
                   </div>
                 </div>
               </div>
@@ -244,24 +229,127 @@
   
       </div>
       <!--/.Carousel Wrapper-->
-  
-  
     </div>
+    <!-- multiple ing slider close -->
+    
+    <!-- form of booking -->
+  
+  
+    <!-- The Modal -->
+  <div id="myModal" class="modal" >
+  
+    <!-- Modal content -->
+    <div class="modal-content" style=" background:rgb(44, 43, 43);">
+      <div class="modal-header" style="padding: 1%;background-color: black; opacity: 0.9;">
+        Booking Form
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body" style="margin: auto;">
+        <div>
+          <div class="loginbox">
+            <form action="" name="login" method="post">
+                <p>Username</p>
+                <input type="text" class="w3-input w3-border w3-round"  name="username" placeholder="Enter Username">
+                <p>Password</p>
+                <input type="password" class="w3-input w3-border w3-round"  name="password" placeholder="Enter Password"><br>
+                <input type="submit"  name="loginbtn" onclick="signup.html" value="login"><br>
+                <a href="">Lost your password?</a><br>
+                <a href="signup.html">Don't have an account?</a>
+            </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <!-- form of booking close -->
 
-<!-- sliders -->
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+  
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var btn1 = document.getElementById("myBtn1");
+    var btn2 = document.getElementById("myBtn2");
+    var btn3 = document.getElementById("myBtn3");
+    var btn4 = document.getElementById("myBtn4");
+    var btn5 = document.getElementById("myBtn5");
+    var btn6 = document.getElementById("myBtn6");
+    var btn7 = document.getElementById("myBtn7");
+    var btn8 = document.getElementById("myBtn8");
+  
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+  
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn1.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn1.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn2.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn2.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn3.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn3.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn4.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn4.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn5.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn5.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn6.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn6.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn7.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn7.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn8.onclick = function() {
+      modal.style.display = "block";
+    }
+    btn8.onclick = function() {
+      modal.style.display = "block";
+    }
+  
+  // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "350px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
-
-
-   
 </body>
 </html> 

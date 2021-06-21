@@ -7,3 +7,15 @@ body{
     background-position:center;
     font-family:sans-serif;
 }
+
+  .carousel {
+      background: #2f4357;
+      margin-top: 20px;
+
+  }
+
+  .carousel-item {
+      text-align: center;
+      min-height: 280px;
+      /* Prevent carousel from being distorted if for some reason image doesn't load */
+  }
