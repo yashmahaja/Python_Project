@@ -249,15 +249,15 @@
           <div class="loginbox">
             <form action="" name="login" method="post">
                 <p>Name</p>
-                <input type="text" class="w3-input w3-border w3-round"  name="username" placeholder="Enter Name">
+                <input type="text" class="w3-input w3-border w3-round"  name="bname" placeholder="Enter Name" required>
                 <p>Email</p>
-                <input type="password" class="w3-input w3-border w3-round"  name="password" placeholder="Enter Email">
+                <input type="email" class="w3-input w3-border w3-round"  name="bemail" placeholder="Enter Email" required>
                 <p>Date</p>
-                <input type="text" class="w3-input w3-border w3-round"  name="date" placeholder="Enter Date">
+                <input type="text" class="w3-input w3-border w3-round"  name="bdate" placeholder="Enter Date" required>
                 <p>Rooms</p>
-                <input type="number" class="w3-input w3-border w3-round"  name="rooms" placeholder="Enter Rooms">
+                <input type="number" class="w3-input w3-border w3-round"  name="brooms" placeholder="Enter Rooms" required>
                 <br>
-                <input type="submit"  name="loginbtn" onclick="signup.html" value="Book"><br>
+                <input type="submit"  name="loginbtn" value="Book"><br>
             </form>
             </div>
         </div>
@@ -268,6 +268,7 @@
   <!-- form of booking close -->
 
   <script>
+    
     // Get the modal
     var modal = document.getElementById("myModal");
   

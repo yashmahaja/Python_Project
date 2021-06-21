@@ -22,10 +22,16 @@
                 <p>Confirm Password</p>
                 <input type="password" name="password1" class="w3-input w3-border w3-round" placeholder="Confirm Password">
                 <br>
-                <input type="submit" value="Signup"><br>
+                <input type="submit" onclick="myprofile('/')" value="Signup"><br>
                 <a href="/" >Already have an account?</a>
             </form>
             </div>
+
+            <script>
+                function myprofile(clr) {
+                location.href = clr;
+                }
+            </script>
         </body>
     </head>
 </html>
