@@ -12,7 +12,7 @@ app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="13221@INDia"
+app.config["MYSQL_PASSWORD"]="root"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
@@ -80,6 +80,21 @@ def myprofile():
 
 def myhome():
     return render_template("home.html")
+
+@app.route('/notification.html',methods=['GET','POST'])
+
+def mynotification():
+    return render_template("notification.html")
+
+@app.route('/reciept.html',methods=['GET','POST'])
+
+def myreciept():
+    return render_template("reciept.html")
+
+@app.route('/wishlist.html',methods=['GET','POST'])
+
+def mywishlist():
+    return render_template("wishlist.html")
 
 
 
