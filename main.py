@@ -12,7 +12,7 @@ app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="root"
+app.config["MYSQL_PASSWORD"]="13221@INDia"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
@@ -32,7 +32,8 @@ def index():
         info=cursor.fetchone()
         if info is not None:
             if info['name_user'] == username and info['password_user'] == password:
-                return render_template("home.html")
+
+                return redirect("http://127.0.0.1:5000/home.html")
         else:
             return "unsuccsesful"
     return render_template("index.html")
@@ -63,7 +64,6 @@ def register():
         else:
             return "Enter all values"
 
-
     return render_template("signup.html")
 
 
@@ -79,6 +79,10 @@ def myprofile():
 @app.route('/home.html',methods=['GET','POST'])
 
 def myhome():
+    if request.method == 'POST':
+        if 'bname' in request.form and 'bemail' in request.form and 'brooms' in request.form and 'bdate' in request.form:
+            # bookingform sql >>
+            return render_template("reciept.html")
     return render_template("home.html")
 
 @app.route('/notification.html',methods=['GET','POST'])
@@ -95,6 +99,12 @@ def myreciept():
 
 def mywishlist():
     return render_template("wishlist.html")
+
+
+@app.route('/bookingform',methods=['GET','POST'])
+
+def mybooking():
+    return render_template("reciept.html")
 
 
 
