@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/third.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+</head>
+
+
+<body>
+
+  <title>My Profile</title>
+
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style=" margin:4%; opacity:100%">
+      <a href="reciept.html">Hotel Bookings</a>
+    </div>
+    <div style="margin:4%;">
+      <a href="wishlist.html">Wishlist</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="notification.html">Notifications</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="home.html">Home</a>
+    </div>
+  </div>
+
+  <!-- button of drawer -->
+  <!-- navbar -->
+  <div class="navbar">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+    <h6 name="username">My Profile</h6>
+    <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+  </div>
+
+  <script>
+    function myprofile(clr) {
+      location.href = clr;
+    }
+  </script>
+<!-- drower+navbar -->
+</body>
+</html> 
