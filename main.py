@@ -34,7 +34,7 @@ def index():
             if info['name_user'] == username and info['password_user'] == password:
                 return redirect(url_for("myhome"))
         else:
-            return "unsuccsesful"
+             return render_template("index.html",message1="Password or username didn't match")
     return render_template("index.html")
 
 
@@ -59,7 +59,7 @@ def register():
                 db.connection.commit()
                 return redirect(url_for("index"))
             else:
-                return "password not match"
+                return render_template("signup.html",message="Password didn't match")
         else:
             return "Enter all values"
 
@@ -80,7 +80,6 @@ def myprofile():
 def myhome():
     if request.method == 'POST':
         if 'bname' in request.form and 'bemail' in request.form and 'brooms' in request.form and 'bdate' in request.form:
-            bname=request.form['bname']
             bemail=request.form['bemail']
             brooms=request.form['brooms']
             bdate=request.form['bdate']
@@ -88,7 +87,7 @@ def myhome():
             cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s WHERE email_user=%s",(brooms,bdate,bemail))
             db.connection.commit()
-            return redirect(url_for("myreciept"))
+            return redirect(url_for("myreciept",x=bemail))
     # get value of username & set value to username
     return render_template("home.html")
 
@@ -97,21 +96,25 @@ def myhome():
 def mynotification():
     return render_template("notification.html")
 
-@app.route('/reciept.html',methods=['GET','POST'])
 
-def myreciept():
-    # get values from database & set values to card 
+@app.route('/reciept.html/<string:x>',methods=['GET','POST'])
+def myreciept(x):
+    # get values from database & set values to card
+    cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+    # username=request.args.get('x')
+    cursor.execute("SELECT * FROM info1 WHERE email_user=%s ",(x))
+    # user = cursor.fetchone() 
     return render_template("reciept.html")
 
-@app.route('/wishlist.html',methods=['GET','POST'])
 
+@app.route('/wishlist.html',methods=['GET','POST'])
 def mywishlist():
     return render_template("wishlist.html")
 
 
 @app.route('/bookingform',methods=['GET','POST'])
 
-def mybooking():
+def mybooking(user):
     return render_template("reciept.html")
 
 
