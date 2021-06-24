@@ -3,16 +3,12 @@ from flask import Flask, render_template,request,redirect,session,url_for
 import MySQLdb 
 from flask_mysqldb import MySQL
 
-
-islogin=False
-
-
 app=Flask(__name__)
 app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="root"
+app.config["MYSQL_PASSWORD"]="13221@INDia"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
@@ -26,8 +22,6 @@ def index():
             password=request.form['password']
             cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT * FROM info1 WHERE name_user=%s AND password_user=%s",(username,password))
-        else:
-            return "Enter all values"
             
         info=cursor.fetchone()
         if info is not None:
@@ -37,8 +31,6 @@ def index():
              return render_template("index.html",message1="Password or username didn't match")
     return render_template("index.html")
 
-
-# islogin=index()
 
 @app.route('/signup.html',methods=['GET','POST'])
 
@@ -83,11 +75,10 @@ def myhome():
             bemail=request.form['bemail']
             brooms=request.form['brooms']
             bdate=request.form['bdate']
-            # bookingform sql >>
             cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s WHERE email_user=%s",(brooms,bdate,bemail))
             db.connection.commit()
-            return redirect(url_for("myreciept",x=bemail))
+            return redirect(url_for("myreciept"))
     # get value of username & set value to username
     return render_template("home.html")
 
@@ -97,13 +88,9 @@ def mynotification():
     return render_template("notification.html")
 
 
-@app.route('/reciept.html/<string:x>',methods=['GET','POST'])
-def myreciept(x):
+@app.route('/reciept.html',methods=['GET','POST'])
+def myreciept():
     # get values from database & set values to card
-    cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-    # username=request.args.get('x')
-    cursor.execute("SELECT * FROM info1 WHERE email_user=%s ",(x))
-    # user = cursor.fetchone() 
     return render_template("reciept.html")
 
 
@@ -114,10 +101,8 @@ def mywishlist():
 
 @app.route('/bookingform',methods=['GET','POST'])
 
-def mybooking(user):
+def mybooking():
     return render_template("reciept.html")
-
-
 
 if __name__ == '__main__' :
     app.run(debug=True)
