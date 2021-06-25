@@ -57,13 +57,14 @@ def register():
 
     return render_template("signup.html")
 
-
 #authentication
-
 
 @app.route('/myprofile.html',methods=['GET','POST'])
 
 def myprofile():
+    if request.method == 'POST':
+        return redirect(url_for("index"))
+
     return render_template("myprofile.html")
 
 

@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
   <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylemyprofile.css') }}"></link>
+
 
 </head>
 
@@ -53,5 +55,25 @@
     }
   </script>
 <!-- drower+navbar -->
+
+<div class="loginbox">
+  <img src="{{ url_for('static', filename='images/img.png') }}" alt="img" class="imgclass">
+  <h1>Profile Info</h1>
+  <form action="" name="logout" method="post">
+    <hr>
+    <br>
+      <p>Name : </p>
+      <br>
+      <p>Email : </p>
+      <br>
+      <p>Address : </p>
+      <br>
+      <hr>
+    <br>
+      <a href="/index.html">
+      <input type="submit"  name="logout" value="log out">
+  </form>
+  </div>
+
 </body>
 </html> 
