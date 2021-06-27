@@ -2,6 +2,8 @@ body {
     font-family: Garamond;
 }
 
+
+
 h1 {
     color: black;
     margin-bottom: 0;
@@ -21,6 +23,14 @@ h3 {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+}
+
+.chat{
+    background-color: black;
+    margin: 10%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    opacity: 0.8;
 }
 
 .ml-auto{

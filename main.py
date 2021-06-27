@@ -9,7 +9,7 @@ import json
 from flask import Flask, render_template, request
 from flask_ngrok import run_with_ngrok
 import nltk
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 
 app=Flask(__name__)
