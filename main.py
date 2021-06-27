@@ -25,14 +25,18 @@ db=MySQL(app)
 @app.route('/',methods=['GET','POST'])
 
 def index():
+    session['username'] = ""
     if request.method == 'POST':
         if 'username' in request.form and 'password' in request.form:
             username=request.form['username']
             password=request.form['password']
+            session['username'] = username
+            session['username1'] = username
             cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("SELECT * FROM info1 WHERE name_user=%s AND password_user=%s",(username,password))
             
         info=cursor.fetchone()
+        session["email"]=info['email_user']
         if info is not None:
             if info['name_user'] == username and info['password_user'] == password:
                 return redirect(url_for("myhome"))
@@ -81,13 +85,15 @@ def myprofile():
 
 def myhome():
     if request.method == 'POST':
-        if 'bname' in request.form and 'bemail' in request.form and 'brooms' in request.form and 'bdate' in request.form:
-            bemail=request.form['bemail']
+        if 'bname' in request.form and 'brooms' in request.form and 'bdate' in request.form and 'bhotel' in request.form:
+
             brooms=request.form['brooms']
             bdate=request.form['bdate']
+            bhotel=request.form['bhotel']
             cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s WHERE email_user=%s",(brooms,bdate,bemail))
+            cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s,hotel_user=%s WHERE email_user=%s",(brooms,bdate,bhotel,session['email']))
             db.connection.commit()
+
             return redirect(url_for("myreciept"))
     # get value of username & set value to username
     return render_template("home.html")
@@ -101,7 +107,15 @@ def mynotification():
 @app.route('/reciept.html',methods=['GET','POST'])
 def myreciept():
     # get values from database & set values to card
-    return render_template("reciept.html")
+    if session["username"]==session["username1"]:
+        email=session["email"]
+        cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("SELECT * FROM info1 WHERE email_user=%s",(session['email'],))
+        info=cursor.fetchone()
+        return render_template("reciept.html",user=info['name_user'],room=info['rooms_user'],date=info['date_user'],hotel=info['hotel_user'])
+    else:
+         return redirect(url_for("index"))
+
 
 
 @app.route('/wishlist.html',methods=['GET','POST'])

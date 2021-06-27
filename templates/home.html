@@ -252,10 +252,10 @@
         <div>
           <div class="loginbox">
             <form action="" name="login" method="post">
+               <p >Hotel</p>
+                <input type="text" id="hotel" class="w3-input w3-border w3-round"  name="bhotel" placeholder="Enter Hotel" required>
                 <p>Name</p>
                 <input type="text" class="w3-input w3-border w3-round"  name="bname" placeholder="Enter Name" required>
-                <p>Email</p>
-                <input type="email" class="w3-input w3-border w3-round"  name="bemail" placeholder="Enter Email" required>
                 <p>Date</p>
                 <input type="text" class="w3-input w3-border w3-round"  name="bdate" placeholder="Enter Date" required>
                 <p>Rooms</p>
@@ -286,6 +286,8 @@
     var btn6 = document.getElementById("myBtn6");
     var btn7 = document.getElementById("myBtn7");
     var btn8 = document.getElementById("myBtn8");
+    var hotel= document.getElementById("hotel");
+    hotel.disabled=true;
   
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -293,59 +295,45 @@
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
       modal.style.display = "block";
-
-    }
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-    btn1.onclick = function() {
-      modal.style.display = "block";
+      hotel.value="hotel1";
       
     }
+
     btn1.onclick = function() {
       modal.style.display = "block";
+      hotel.value="hotel2";
+      
     }
     btn2.onclick = function() {
       modal.style.display = "block";
-    }
-    btn2.onclick = function() {
-      modal.style.display = "block";
+      hotel.value="hotel3";
     }
     btn3.onclick = function() {
       modal.style.display = "block";
-    }
-    btn3.onclick = function() {
-      modal.style.display = "block";
+      hotel.value="hotel4";
     }
     btn4.onclick = function() {
       modal.style.display = "block";
-    }
-    btn4.onclick = function() {
-      modal.style.display = "block";
+      hotel.value="hotel5";
     }
     btn5.onclick = function() {
       modal.style.display = "block";
+      hotel.value="hotel6";
     }
-    btn5.onclick = function() {
-      modal.style.display = "block";
-    }
+    
     btn6.onclick = function() {
       modal.style.display = "block";
+      hotel.value="hotel7";
     }
-    btn6.onclick = function() {
-      modal.style.display = "block";
-    }
+    
     btn7.onclick = function() {
       modal.style.display = "block";
+      hotel.value="hotel8";
     }
-    btn7.onclick = function() {
-      modal.style.display = "block";
-    }
+    
     btn8.onclick = function() {
       modal.style.display = "block";
-    }
-    btn8.onclick = function() {
-      modal.style.display = "block";
+      hotel.value="hotel9";
     }
   
   // When the user clicks on <span> (x), close the modal
