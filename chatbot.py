@@ -1,8 +1,8 @@
 import random
-from keras.optimizers import SGD
-from keras.layers import Dense, Dropout
-from keras.models import load_model
-from keras.models import Sequential
+from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.models import load_model
+from tensorflow.keras.models import Sequential
 import numpy as np
 import pickle
 import json
