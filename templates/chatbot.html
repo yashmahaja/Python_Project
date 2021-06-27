@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylechatbot.css')}}" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css.css')}}" /> -->
+    <script src="{{ url_for('static', filename='js/chatbotjquery.min.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/third.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</head>
+
+<body style="padding-bottom: 3%;">
+
+   <title>Support</title>
+    
+  <!-- drawer -->
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div style=" margin:4%;">
+      <a href="home.html">Home</a>
+    </div>
+    <div style=" margin:4%; opacity:100%">
+      <a href="reciept.html">Hotel's</a>
+    </div>
+    <div style="margin:4%;">
+      <a href="wishlist.html">Wishlist</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="chatbot.html">Support</a>
+    </div>
+    <div style=" margin:4%;">
+      <a href="notification.html">Notifications</a>
+    </div>
+  
+  </div>
+
+  <!-- button of drawer -->
+  <!-- navbar -->
+  <div class="navbar">
+    <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
+    <h6 name="username">Welcome!!</h6>
+    <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
+  </div>
+
+  <script>
+    function myprofile(clr) {
+      location.href = clr;
+    }
+  </script>
+<!-- drower+navbar -->
+
+
+    <div class="row" style="background-color: black; opacity: 0.8; margin: 10%; padding-bottom: 5%;">
+        <div class="col-md-10 mr-auto ml-auto" >
+    <form>
+        <div id="chatbox">
+            <div>
+                <p class="botText"><span>Hi! I'm Your bot.</span></p>
+            </div>
+        </div>
+        <div id="userInput" class="row">
+            <div class="col-md-10" >
+                <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
+                <br>
+                <button type="submit" id="send" class="btn btn-warning">Send</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("form").on("submit", function(event) {
+            var rawText = $("#text").val();
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#text").val("");
+            $("#chatbox").append(userHtml);
+            document.getElementById("userInput").scrollIntoView({
+                block: "start",
+                behavior: "smooth",
+            });
+            $.ajax({
+                data: {
+                    msg: rawText,
+                },
+                type: "POST",
+                url: "/get",
+            }).done(function(data) {
+                var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+                $("#chatbox").append($.parseHTML(botHtml));
+                document.getElementById("userInput").scrollIntoView({
+                    block: "start",
+                    behavior: "smooth",
+                });
+            });
+            event.preventDefault();
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ app.secret_key="ebcqaeyzfqtgtai"
 
 app.config["MYSQL_HOST"]="localhost"
 app.config["MYSQL_USER"]="root"
-app.config["MYSQL_PASSWORD"]="13221@INDia"
+app.config["MYSQL_PASSWORD"]="root"
 app.config["MYSQL_DB"]="data"
 
 db=MySQL(app)
@@ -121,9 +121,7 @@ intents = json.loads(open("intents.json").read())
 words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
 
-app = Flask(__name__)
-
-@app.route("chatbot.html")
+@app.route("/chatbot.html")
 def home():
     return render_template("chatbot.html")
 

@@ -21,6 +21,7 @@ body{
     box-sizing: border-box;
     padding:70px 30px;
 }
+
 .profileimg{
     width: 3%;
     transition: transform .2s;
@@ -48,6 +49,32 @@ body{
     transform: scale(1.1);
     
   }
+
+/* help */
+
+  .help{
+    width: 3%;
+    transition: transform .2s;
+  }
+  
+  .help{
+  
+    height:70px;
+    padding: 1%;
+  }
+
+  .helpimg{
+    width: 3%;
+    transition: transform .2s;
+
+  }
+  
+  .help img:hover{
+    transform: scale(1.1);
+    
+  }
+
+  /* help end */
 
 .imgclass{
     width:100px;
