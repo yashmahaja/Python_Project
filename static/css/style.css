@@ -21,7 +21,33 @@ body{
     box-sizing: border-box;
     padding:70px 30px;
 }
-
+.profileimg{
+    width: 3%;
+    transition: transform .2s;
+  }
+  
+  .zoom{
+    transition: transform .2s;
+  }
+  .zoom a:hover{
+    transform: scale(1.1);
+  }
+  
+  
+  .navbar{
+  
+    height:70px;
+    background:rgb(0, 0, 0);
+    color:#fff;
+    opacity: 0.9;
+    box-sizing: border-box;
+    padding: 1%;
+  }
+  
+  .navbar img:hover{
+    transform: scale(1.1);
+    
+  }
 
 .imgclass{
     width:100px;
