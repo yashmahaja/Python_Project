@@ -19,7 +19,7 @@
 
 <body>
 
-  <title>Wishlist</title>
+  <title>About Us</title>
 
   <!-- drawer -->
 
@@ -31,23 +31,23 @@
     <div style=" margin:4%; opacity:100%">
       <a href="reciept.html">Hotel's</a>
     </div>
-    <div style="margin:4%;">
-      <a href="wishlist.html">Wishlist</a>
-    </div>
     <div style=" margin:4%;">
       <a href="chatbot.html">Support</a>
+    </div>
+    <div style="margin:4%;">
+      <a href="wishlist.html">About Us</a>
     </div>
     <div style=" margin:4%;">
       <a href="notification.html">Notifications</a>
     </div>
-    
+  
   </div>
 
   <!-- button of drawer -->
   <!-- navbar -->
   <div class="navbar">
     <span style="transition: transform .2s;font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776;</span>
-    <h6 name="username">Wishlist</h6>
+    <h6 name="username">About Us</h6>
     <img onclick="myprofile('myprofile.html')" src="{{ url_for('static', filename='images/profile.png') }}" name="profilepic" class="profileimg"/>
   </div>
 
@@ -57,5 +57,328 @@
     }
   </script>
 <!-- drower+navbar -->
+
+
+<!-- About us -->
+<br>
+<style>
+  .footer-dark {
+padding:50px 0;
+color:#f0f9ff;
+background-color:#282d32;
+}
+
+.footer-dark h3 {
+margin-top:0;
+margin-bottom:12px;
+font-weight:bold;
+font-size:16px;
+}
+
+.footer-dark ul {
+padding:0;
+list-style:none;
+line-height:1.6;
+font-size:14px;
+margin-bottom:0;
+}
+
+.footer-dark ul a {
+color:inherit;
+text-decoration:none;
+opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+opacity:0.8;
+}
+
+@media (max-width:767px) {
+.footer-dark .item:not(.social) {
+  text-align:center;
+  padding-bottom:20px;
+}
+}
+
+.footer-dark .item.text {
+margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+.footer-dark .item.text {
+  margin-bottom:0;
+}
+}
+
+.footer-dark .item.text p {
+opacity:0.6;
+margin-bottom:0;
+}
+
+.footer-dark .item.social {
+text-align:center;
+}
+
+@media (max-width:991px) {
+.footer-dark .item.social {
+  text-align:center;
+  margin-top:20px;
+}
+}
+
+.footer-dark .item.social > a {
+font-size:20px;
+width:36px;
+height:36px;
+line-height:36px;
+display:inline-block;
+text-align:center;
+border-radius:50%;
+box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+margin:0 8px;
+color:#fff;
+opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+opacity:0.9;
+}
+
+.footer-dark .copyright {
+text-align:center;
+padding-top:24px;
+opacity:0.3;
+font-size:13px;
+margin-bottom:0;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<div class="footer-dark" style="margin: 1%;opacity: 0.9;">
+  <footer>
+      <div class="container">
+          <div class="row">
+            
+              <div class="col-md-6 item text">
+                  <h3>Data Analytics Project</h3>
+                  <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+              </div>
+              <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+          </div>
+          <p class="copyright">Data Analytics Project © 2021</p>
+      </div>
+  </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<br>
+<div style="background-color: black; opacity: 0.7; padding: 1%;text-align: center; margin-left: 2%;margin-right: 2%">
+<h3 style="margin: auto;color: aliceblue;">Our Team</h3>
+</div>
+
+  <!-- Multiple image slider-->
+  <div class="container my-4">
+    <div id="multi-item-example" class="slide" data-ride="carousel">
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--Slides-->
+      <div class="carousel-inner zoom" role="listbox">
+        <!--First slide-->
+        <div class="carousel-item active">
+          
+          <div class="row">
+            <div class="col-md-4" >
+              <div class="card mb-2 " style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team1.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn6" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2" style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team2.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn7" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block ">
+              <div class="card mb-2" style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team3.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn8" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Third slide-->
+         <!--Third slide-->
+         <div class="carousel-item">
+
+          <div class="row">
+            <div class="col-md-4" >
+              <div class="card mb-2 " style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team1.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn6" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="card mb-2" style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team2.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn7" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block ">
+              <div class="card mb-2" style="padding: 2%">
+                <img class="card-img-top" src="https://www.w3schools.com/w3images/team3.jpg"
+                  alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Name : Admin Admin</h4>
+                    <p>Email : example@example.com</p>
+                  <a id="myBtn8" class="btn btn-primary">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--/.Third slide-->
+
+      </div>
+      <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+  </div>
+  <!-- multiple ing slider close -->
+
+<!-- 
+Contact us -->
+
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  .container1 {
+    border-radius: 5px;
+    background-color: black;
+    margin-left:2%;
+    margin-right:2%;
+    margin-bottom:2%;
+    color: aliceblue;
+    padding: 2%;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  </style>
+
+  <br>
+  <div class="container1">
+    <div style="text-align:center">
+      <h2>Contact Us</h2>
+      <p>Swing by for a cup of coffee, or leave us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="{{ url_for('static', filename='images/map.jpg') }}" style="width:100%">
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+
 </body>
 </html> 

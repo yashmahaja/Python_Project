@@ -93,16 +93,16 @@
     <div style=" margin:4%; opacity:100%">
       <a href="reciept.html">Hotel's</a>
     </div>
-    <div style="margin:4%;">
-      <a href="wishlist.html">Wishlist</a>
-    </div>
     <div style=" margin:4%;">
       <a href="chatbot.html">Support</a>
+    </div>
+    <div style="margin:4%;">
+      <a href="wishlist.html">About Us</a>
     </div>
     <div style=" margin:4%;">
       <a href="notification.html">Notifications</a>
     </div>
-
+  
   </div>
 
   <!-- button of drawer -->
@@ -127,60 +127,59 @@
         float:left; 
         width:25%;
         height:280px;
-    }
+    } 
     #middlebox{
-        float:right; 
-        width:75%;
+        float:left; 
+        width:25%;
         height:280px;
+    }
+    #rightbox{
+        float:right; 
+        width:50%;
+        height:230px;
     }
    
 </style> 
-</head> 
 
-<body> 
-<div id = "boxes">
-      
-    <div id = "leftbox" >
-      <div id="slideshow" style="margin-left: 15%;">
-        <div>
-          <img src="//farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
-        </div>
-        <div>
-          <img src="//farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
-        </div>
-        
-      </div>
-    </div> 
-      
-    <div id = "middlebox">
+<style>
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #ffffff;
+    padding: 9px;
+    background-color: white;
+    margin-top: 3%;
+    height: 180px;
+    
+  }
+  </style>
+ 
+  <div class="center">
 
-      <div class="row" style="margin: right 20%; margin-top: 9%; width: 4500px;">
-        <div class="column">
-          <div class="card">
-            <h3>{{hotel}}</h3>
-            <p>{{user}}</p>
-            <p>{{room}}</p>
-            <p>{{date}}</p>
-          </div>
-        </div>
-      </div>
 
+    <div id="leftbox">
+          <img src="//farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg" height="55%">
     </div>
-      
-</div>
 
-  <script type="text/javascript">
+    <div id="middlebox">
+        <h3><b>Hotel Name : </b></h3>
+        <p><b>User Name : </b></p>
+        <p><b>Rooms : </b></p>
+        <p><b>Date : </b></p>
+    </div>
+
+    <div id="rightbox">
+      <h3>{{hotel}}</h3>
+      <p>{{user}}</p>
+      <p>{{room}}</p>
+      <p>{{date}}</p>
+    </div>
+
+  </div>
+
   
-  $("#slideshow > div:gt(0)").hide();
 
-    setInterval(function () {
-      $('#slideshow > div:first')
-        .fadeOut(1000)
-        .next()
-        .fadeIn(1000)
-        .end()
-        .appendTo('#slideshow');
-    }, 3000);</script>
+
 
 </body>
 
