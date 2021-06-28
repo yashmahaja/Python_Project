@@ -251,9 +251,8 @@
       <div class="modal-body" style="margin: auto;">
         <div>
           <div class="loginbox">
-            <form action="" name="login" method="post">
-               <p >Hotel</p>
-                <input type="text" id="hotel" class="w3-input w3-border w3-round"  name="bhotel" placeholder="Enter Hotel" required>
+            <form action="" name="bokking" method="post">
+                <input type="hidden" id="hotel" class="w3-input w3-border w3-round"  name="bhotel" placeholder="Enter Hotel" required>
                 <p>Name</p>
                 <input type="text" class="w3-input w3-border w3-round"  name="bname" placeholder="Enter Name" required>
                 <p>Date</p>
@@ -261,7 +260,7 @@
                 <p>Rooms</p>
                 <input type="number" class="w3-input w3-border w3-round"  name="brooms" placeholder="Enter Rooms" required>
                 <br>
-                <input type="submit"  name="loginbtn" value="Book"><br>
+                <input type="submit" onclick="" name="loginbtn" value="Book"><br>
             </form>
             </div>
         </div>
@@ -287,7 +286,8 @@
     var btn7 = document.getElementById("myBtn7");
     var btn8 = document.getElementById("myBtn8");
     var hotel= document.getElementById("hotel");
-    hotel.disabled=true;
+    var hotelname= document.getElementById("hotelname");
+    // hotel.disabled=true;
   
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -296,7 +296,6 @@
     btn.onclick = function() {
       modal.style.display = "block";
       hotel.value="hotel1";
-      
     }
 
     btn1.onclick = function() {

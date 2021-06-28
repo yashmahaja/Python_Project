@@ -84,19 +84,22 @@ def myprofile():
 @app.route('/home.html',methods=['GET','POST'])
 
 def myhome():
-    if request.method == 'POST':
-        if 'bname' in request.form and 'brooms' in request.form and 'bdate' in request.form and 'bhotel' in request.form:
+    if session["username"]==session["username1"]:
+        if request.method == 'POST':
+            if 'bname' in request.form and 'brooms' in request.form and 'bdate' in request.form and 'bhotel' in request.form:
 
-            brooms=request.form['brooms']
-            bdate=request.form['bdate']
-            bhotel=request.form['bhotel']
-            cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s,hotel_user=%s WHERE email_user=%s",(brooms,bdate,bhotel,session['email']))
-            db.connection.commit()
+                brooms=request.form['brooms']
+                bdate=request.form['bdate']
+                bhotel=request.form['bhotel']
+                cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+                cursor.execute("UPDATE data.info1 SET rooms_user=%s,date_user=%s,hotel_user=%s WHERE email_user=%s",(brooms,bdate,bhotel,session['email']))
+                db.connection.commit()
 
-            return redirect(url_for("myreciept"))
-    # get value of username & set value to username
-    return render_template("home.html")
+                return redirect(url_for("myreciept"))
+        # get value of username & set value to username
+        return render_template("home.html")
+    else:
+        return redirect(url_for("index"))
 
 @app.route('/notification.html',methods=['GET','POST'])
 
