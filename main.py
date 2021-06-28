@@ -77,8 +77,14 @@ def register():
 def myprofile():
     if request.method == 'POST':
         return redirect(url_for("index"))
-
-    return render_template("myprofile.html")
+        
+    if session["username"]==session["username1"]:
+        cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("SELECT * FROM info1 WHERE email_user=%s",(session['email'],))
+        info=cursor.fetchone()
+        return render_template("myprofile.html",user=info['name_user'],address=info['address_user'],email=info['email_user'])
+    else:
+        return redirect(url_for("index"))
 
 
 @app.route('/home.html',methods=['GET','POST'])
@@ -108,7 +114,6 @@ def mynotification():
 def myreciept():
     # get values from database & set values to card
     if session["username"]==session["username1"]:
-        email=session["email"]
         cursor=db.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute("SELECT * FROM info1 WHERE email_user=%s",(session['email'],))
         info=cursor.fetchone()
