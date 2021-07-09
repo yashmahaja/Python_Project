@@ -12,7 +12,7 @@ Open the project directory.
 
 First you have to run the file reqirements.txt to install all the requirements for the project
 
-$ pip install -r recirements.txt
+$ pip install -r requirements.txt
 
 After the installation of all the requirements 
 
