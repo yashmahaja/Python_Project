@@ -46,7 +46,8 @@ Home:
 
 About us :
 
-![about us](https://user-images.githubusercontent.com/46632001/125084306-fd32d900-e0e6-11eb-8509-4f64e1393ae6.PNG)
+![about us 2](https://user-images.githubusercontent.com/46632001/125156651-340afc80-e184-11eb-9ee0-1a0778e5b483.PNG)
+![about us](https://user-images.githubusercontent.com/46632001/125156659-42f1af00-e184-11eb-9fe8-c6713a7684cd.PNG)
 
 Chatbot :
 ![chat](https://user-images.githubusercontent.com/46632001/125084311-fe640600-e0e6-11eb-809b-7a1d1c85e777.PNG)
