@@ -1,4 +1,5 @@
 body{
+  
   font-family: "Lato", sans-serif;
   margin: 0;
   padding: 0;
@@ -6,6 +7,11 @@ body{
   background-size:cover;
   background-position:center;
   font-family:sans-serif;
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .profileimg{
   width: 3%;
@@ -21,7 +27,7 @@ body{
 
 
 .navbar{
-
+  
   height:70px;
   background:rgb(0, 0, 0);
   color:#fff;
@@ -171,7 +177,7 @@ margin-bottom: 20px;
 color: #fff;
 }
 
-.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"]
+.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
 {
 
   background: transparent; 

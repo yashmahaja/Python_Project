@@ -36,7 +36,7 @@ body{
   
   
   .navbar{
-  
+    
     height:70px;
     background:rgb(0, 0, 0);
     color:#fff;
@@ -104,7 +104,7 @@ margin-bottom: 20px;
 color: #fff;
 }
 
-.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"]
+.loginbox input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
 {
 
     background: transparent; 
@@ -178,7 +178,7 @@ margin-bottom: 20px;
 color: #fff;
 }
 
-.loginboxsignup input[type="text"], input[type="password"], input[type="number"], input[type="email"]
+.loginboxsignup input[type="text"], input[type="password"], input[type="number"], input[type="email"],input[type="date"]
 {
 
     background: transparent; 
